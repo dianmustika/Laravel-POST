@@ -18,7 +18,7 @@
     <div class="container">
         <nav class="navbar navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{{ url('/post') }}">
                     <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">     
                      <b> LaraPost</b>
                 </a>
@@ -45,7 +45,7 @@
                             <p class="card-text">{{ substr($item->content, 0, 100) }}</p>
                             <a href="{{url('post/edit')}}/{{$item->id}}" class="btn btn-warning">Edit Post</a>
                             <a href="{{url('post/hapus')}}/{{$item->id}}" class="btn btn-danger">Hapus] Post</a>
-                            <a href="{{url('post/')}}/{{$item->id}}" class="btn btn-dafault">Baca</a>
+                            <a href="{{url('post/')}}/{{$item->id}}/{{ $item->slug }}" class="btn btn-dafault">Baca</a>
                         </div>
                     </div>
                     <br>

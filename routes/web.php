@@ -22,5 +22,6 @@ Route::get('/post',[PostController::class,'index']);
 Route::get('/post/create',[PostController::class,'create']);
 Route::post('/post/store',[PostController::class,'store']);
 Route::get('/post/edit/{id}',[PostController::class,'edit']);
+Route::get('post/{id}/{slug}',[PostController::class,'baca']);
 Route::post('/post/update/{id}',[PostController::class,'update']);
 Route::get('/post/hapus/{id}',[PostController::class,'hapus']);
