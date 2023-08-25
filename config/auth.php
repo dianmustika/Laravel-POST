@@ -18,6 +18,14 @@ return [
         'passwords' => 'users',
     ],
 
+    'guards' => [
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+    ],
+    
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards
@@ -64,6 +72,14 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+
+    'providers' => [
+            'admin' => [
+                'driver' => 'eloquent',
+                'model' => \App\Models\Admin::class,
+            ],
+        ],
+        
 
         // 'users' => [
         //     'driver' => 'database',
