@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use \App\Http\Controllers\PostController;
-use \App\Http\Controller\Auth\LoginController;
+//use \App\Http\Controller\Auth\LoginController;
+use \App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,4 +34,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::post('/login', 'Auth\LoginController@authenticate')->name('login');
+//Route::post('/login', 'Auth\LoginController@authenticate')->name('login');
+
+Route::get('/login', [LoginController::class,'index']);
+Route::post('/login', 'LoginController@login');
